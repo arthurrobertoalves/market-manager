@@ -213,7 +213,9 @@ function UsuariosContent() {
               <Label>Papel</Label>
               <Select value={form.role} onValueChange={(value) => value && setForm({ ...form, role: value as Role })}>
                 <SelectTrigger className="w-full">
-                  <SelectValue />
+                  <SelectValue>
+                    {(value: Role) => (value === "ADMIN" ? "Administrador" : "Funcionário")}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="FUNCIONARIO">Funcionário</SelectItem>

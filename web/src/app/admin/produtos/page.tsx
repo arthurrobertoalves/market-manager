@@ -229,7 +229,13 @@ function ProdutosContent() {
                   onValueChange={(value) => value && setCategoryFilter(value)}
                 >
                   <SelectTrigger className="w-48">
-                    <SelectValue placeholder="Categoria" />
+                    <SelectValue placeholder="Categoria">
+                      {(value: string) =>
+                        value === "all"
+                          ? "Todas as categorias"
+                          : (categories.find((category) => category.id === value)?.name ?? "Categoria")
+                      }
+                    </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Todas as categorias</SelectItem>
@@ -421,7 +427,11 @@ function ProdutosContent() {
                 }
               >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Selecione" />
+                  <SelectValue placeholder="Selecione">
+                    {(value: string) =>
+                      categories.find((category) => category.id === value)?.name ?? "Selecione"
+                    }
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((category) => (
@@ -446,7 +456,9 @@ function ProdutosContent() {
                 }
               >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Selecione" />
+                  <SelectValue placeholder="Selecione">
+                    {(value: string) => TAG_LABELS[value] ?? value ?? "Selecione"}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {availableTags.map((tag) => (
@@ -474,7 +486,7 @@ function ProdutosContent() {
                   onValueChange={(value) => value && setProductForm({ ...productForm, unit: value })}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue />
+                    <SelectValue>{(value: string) => UNIT_LABELS[value] ?? value}</SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     {UNIT_OPTIONS.map((unit) => (

@@ -119,7 +119,7 @@ function VendasContent() {
         </div>
         <Select value={period} onValueChange={(value) => setPeriod(value as Period)}>
           <SelectTrigger className="w-56">
-            <SelectValue />
+            <SelectValue>{(value: Period) => PERIOD_LABELS[value]}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             {(Object.keys(PERIOD_LABELS) as Period[]).map((key) => (

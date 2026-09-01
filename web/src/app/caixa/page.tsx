@@ -358,7 +358,9 @@ function CaixaContent() {
                 <Label>Forma de pagamento</Label>
                 <Select value={paymentMethod} onValueChange={(value) => setPaymentMethod(value as PaymentMethod)}>
                   <SelectTrigger className="w-full">
-                    <SelectValue />
+                    <SelectValue>
+                      {(value: PaymentMethod) => PAYMENT_METHOD_LABELS[value]}
+                    </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     {PAYMENT_METHODS.map((method) => (
