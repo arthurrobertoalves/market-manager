@@ -156,17 +156,13 @@ function CaixaContent() {
       toast.error("Adicione ao menos um produto ao carrinho.");
       return;
     }
-    if (!customerCpf) {
-      toast.error("Informe o CPF do cliente.");
-      return;
-    }
 
     setSubmitting(true);
     try {
       const sale = await api<Sale>("/sales", {
         method: "POST",
         body: {
-          customer: { cpf: customerCpf },
+          customer: customerCpf ? { cpf: customerCpf } : undefined,
           items: cart.map((item) => ({ productId: item.product.id, quantity: item.quantity })),
           paymentMethod,
         },
@@ -346,7 +342,7 @@ function CaixaContent() {
 
           <Card>
             <CardHeader>
-              <CardTitle>CPF na nota</CardTitle>
+              <CardTitle>CPF na nota (opcional)</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="space-y-2">
@@ -355,7 +351,7 @@ function CaixaContent() {
                   id="customerCpf"
                   value={customerCpf}
                   onChange={(event) => setCustomerCpf(event.target.value)}
-                  placeholder="000.000.000-00"
+                  placeholder="000.000.000-00 (deixe em branco se não quiser)"
                 />
               </div>
               <div className="space-y-2">
@@ -400,9 +396,11 @@ function CaixaContent() {
                 <span>{formatDate(receipt.createdAt)}</span>
                 <Badge variant="secondary">{PAYMENT_METHOD_LABELS[receipt.paymentMethod]}</Badge>
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground">CPF na nota: {receipt.customer.cpf}</p>
-              </div>
+              {receipt.customer && (
+                <div>
+                  <p className="text-xs text-muted-foreground">CPF na nota: {receipt.customer.cpf}</p>
+                </div>
+              )}
               <Table>
                 <TableHeader>
                   <TableRow>

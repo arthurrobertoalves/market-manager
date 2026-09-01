@@ -64,7 +64,7 @@ export interface SaleItem {
 
 export interface Sale {
   id: string;
-  customerId: string;
+  customerId: string | null;
   userId: string;
   total: string;
   paymentMethod: PaymentMethod;
@@ -72,7 +72,7 @@ export interface Sale {
   cancelReason: string | null;
   createdAt: string;
   updatedAt: string;
-  customer: Customer;
+  customer: Customer | null;
   user: { id: string; name: string; email: string };
   items: SaleItem[];
 }

@@ -98,7 +98,7 @@ model Product {
 
 model Sale {
   id            String        @id @default(uuid())
-  customerId    String
+  customerId    String?
   userId        String
   total         Decimal       @db.Decimal(10, 2)
   paymentMethod PaymentMethod
@@ -107,7 +107,7 @@ model Sale {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 
-  customer Customer   @relation(fields: [customerId], references: [id])
+  customer Customer?  @relation(fields: [customerId], references: [id])
   user     User       @relation(fields: [userId], references: [id])
   items    SaleItem[]
 

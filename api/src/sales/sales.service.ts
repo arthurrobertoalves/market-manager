@@ -22,7 +22,9 @@ export class SalesService {
   ) {}
 
   async create(dto: CreateSaleDto, userId: string) {
-    const customer = await this.customersService.findOrCreate(dto.customer);
+    const customer = dto.customer?.cpf
+      ? await this.customersService.findOrCreate(dto.customer)
+      : null;
 
     const { sale, updatedProducts } = await this.prisma.$transaction(async (tx) => {
       let total = new Prisma.Decimal(0);
@@ -56,7 +58,7 @@ export class SalesService {
 
       const sale = await tx.sale.create({
         data: {
-          customer: { connect: { id: customer.id } },
+          customer: customer ? { connect: { id: customer.id } } : undefined,
           user: { connect: { id: userId } },
           total,
           paymentMethod: dto.paymentMethod,

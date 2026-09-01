@@ -17,6 +17,7 @@ const ADMIN_NAV: NavItem[] = [
   { href: "/admin/estoque", label: "Estoque" },
   { href: "/admin/vendas", label: "Vendas" },
   { href: "/admin/fechamento", label: "Fechamento" },
+  { href: "/admin/usuarios", label: "Usuários" },
 ];
 
 const FUNCIONARIO_NAV: NavItem[] = [{ href: "/caixa", label: "Caixa" }];

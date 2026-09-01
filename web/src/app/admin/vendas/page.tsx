@@ -226,7 +226,7 @@ function VendasContent() {
               {sales.map((sale) => (
                 <TableRow key={sale.id}>
                   <TableCell>{formatDate(sale.createdAt)}</TableCell>
-                  <TableCell>{sale.customer.cpf}</TableCell>
+                  <TableCell>{sale.customer?.cpf ?? "—"}</TableCell>
                   <TableCell>{PAYMENT_METHOD_LABELS[sale.paymentMethod]}</TableCell>
                   <TableCell>{formatCurrency(sale.total)}</TableCell>
                   <TableCell>

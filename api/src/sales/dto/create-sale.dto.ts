@@ -4,6 +4,7 @@ import {
   IsArray,
   IsEnum,
   IsInt,
+  IsOptional,
   IsUUID,
   Min,
   ValidateNested,
@@ -21,9 +22,10 @@ export class SaleItemInputDto {
 }
 
 export class CreateSaleDto {
+  @IsOptional()
   @ValidateNested()
   @Type(() => CreateCustomerDto)
-  customer!: CreateCustomerDto;
+  customer?: CreateCustomerDto;
 
   @IsArray()
   @ArrayNotEmpty()
