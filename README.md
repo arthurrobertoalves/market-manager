@@ -8,13 +8,6 @@ acompanhamento (produtos, vendas, estoque, fechamento de caixa).
 
 [https://market-manager-1.onrender.com](https://market-manager-1.onrender.com)
 
-Logins de teste:
-
-| Papel | Email | Senha |
-|---|---|---|
-| Administrador | `admin@email.com` | `admin@123` |
-| Funcionário (caixa) | `func@email.com` | `func@123` |
-
 ## Funcionamento
 
 <!-- Coloque aqui a foto/print mostrando o sistema em uso -->
@@ -55,5 +48,4 @@ Pré-requisitos: Node.js e Docker instalados.
    ```
    Fica disponível em `http://localhost:3000`.
 
-4. Acessar `http://localhost:3000/login` no navegador e entrar com um dos logins de
-   teste acima.
+4. Acessar `http://localhost:3000/login` no navegador.
