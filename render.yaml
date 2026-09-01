@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: market-manager-api
+    runtime: node
+    plan: free
+    rootDir: api
+    buildCommand: npm install --include=dev && npx prisma generate && npm run build
+    startCommand: npm run start:migrate:prod
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: WEB_URL
+        sync: false
+      - key: NODE_VERSION
+        value: 22.22.3

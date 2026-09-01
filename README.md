@@ -124,3 +124,47 @@ cd web
 npm run build           # build de produção
 npm run lint             # eslint
 ```
+
+## Deploy (produção)
+
+Stack sugerida: **Neon** (Postgres), **Render** (API NestJS) e **Vercel** (frontend
+Next.js). Cada peça é independente — pode trocar qualquer uma por outro provedor.
+
+### 1. Banco de dados — Neon
+
+1. Crie um projeto em [neon.tech](https://neon.tech) (tem free tier).
+2. Copie a *connection string* (formato `postgresql://usuario:senha@host/banco?sslmode=require`).
+3. Rode as migrations contra o banco do Neon a partir da sua máquina:
+   ```bash
+   cd api
+   DATABASE_URL="<connection string do Neon>" npx prisma migrate deploy
+   DATABASE_URL="<connection string do Neon>" npx prisma db seed   # opcional, dados de exemplo
+   ```
+
+### 2. Backend — Render
+
+O repositório já tem um `render.yaml` (Blueprint) configurado com `rootDir: api`,
+build (`npm install --include=dev && npx prisma generate && npm run build`) e start
+(`npm run start:migrate:prod`, que roda `prisma migrate deploy` antes de subir o
+servidor a cada deploy).
+
+1. Em [render.com](https://render.com), **New > Blueprint**, aponte para este repositório.
+2. Configure as variáveis de ambiente pedidas (`sync: false` no blueprint = você
+   preenche na hora):
+   - `DATABASE_URL` — connection string do Neon.
+   - `WEB_URL` — URL do frontend na Vercel (pode preencher depois do passo 3 e
+     redeployar; aceita múltiplas origens separadas por vírgula).
+   - `JWT_SECRET` é gerado automaticamente pelo Render.
+3. Deploy. Anote a URL pública gerada (algo como `https://market-manager-api.onrender.com`).
+
+Sem `render.yaml`/Blueprint, dá pra criar o Web Service manualmente com os mesmos
+comandos de build/start e Root Directory `api`.
+
+### 3. Frontend — Vercel
+
+1. Em [vercel.com](https://vercel.com), importe o repositório.
+2. Em **Root Directory**, selecione `web`.
+3. Em **Environment Variables**, adicione `NEXT_PUBLIC_API_URL` apontando para a URL
+   do backend no Render (passo anterior).
+4. Deploy. Depois, volte no Render e atualize `WEB_URL` com a URL final da Vercel para
+   o CORS liberar o frontend em produção.
