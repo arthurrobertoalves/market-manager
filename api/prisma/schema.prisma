@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  FUNCIONARIO
+}
+
+enum PaymentMethod {
+  CREDITO
+  DEBITO
+  PIX
+  DINHEIRO
+}
+
+enum SaleStatus {
+  FINALIZADA
+  CANCELADA
+}
+
+enum StockAlertLevel {
+  CRITICO
+  MEDIO
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(FUNCIONARIO)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  sales Sale[]
+
+  @@map("users")
+}
+
+model Customer {
+  id        String   @id @default(uuid())
+  name      String?
+  contact   String?
+  cpf       String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sales Sale[]
+
+  @@map("customers")
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  tags      String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  products Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id            String   @id @default(uuid())
+  code          String   @unique
+  name          String
+  categoryId    String
+  tag           String
+  price         Decimal  @db.Decimal(10, 2)
+  unit          String   @default("UN")
+  imageUrl      String?
+  stockQuantity Int      @default(0)
+  criticalLevel Int      @default(5)
+  mediumLevel   Int      @default(15)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  category    Category     @relation(fields: [categoryId], references: [id])
+  saleItems   SaleItem[]
+  stockAlerts StockAlert[]
+
+  @@map("products")
+}
+
+model Sale {
+  id            String        @id @default(uuid())
+  customerId    String
+  userId        String
+  total         Decimal       @db.Decimal(10, 2)
+  paymentMethod PaymentMethod
+  status        SaleStatus    @default(FINALIZADA)
+  cancelReason  String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  customer Customer   @relation(fields: [customerId], references: [id])
+  user     User       @relation(fields: [userId], references: [id])
+  items    SaleItem[]
+
+  @@map("sales")
+}
+
+model SaleItem {
+  id           String   @id @default(uuid())
+  saleId       String
+  productId    String
+  quantity     Int
+  unitPrice    Decimal  @db.Decimal(10, 2)
+  totalPrice   Decimal  @db.Decimal(10, 2)
+  canceled     Boolean  @default(false)
+  cancelReason String?
+  createdAt    DateTime @default(now())
+
+  sale    Sale    @relation(fields: [saleId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("sale_items")
+}
+
+model StockAlert {
+  id         String           @id @default(uuid())
+  productId  String
+  level      StockAlertLevel
+  message    String
+  notifiedAt DateTime         @default(now())
+  resolved   Boolean          @default(false)
+
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("stock_alerts")
+}
