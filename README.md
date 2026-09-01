@@ -10,7 +10,8 @@ acompanhamento (produtos, vendas, estoque, fechamento de caixa).
 
 ## Funcionamento
 
-<!-- Coloque aqui a foto/print mostrando o sistema em uso -->
+
+![Print do sistema](docs/print_system.png)
 
 ## Tecnologias usadas
 
