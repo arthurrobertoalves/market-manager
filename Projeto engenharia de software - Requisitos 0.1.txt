@@ -1,0 +1,261 @@
+﻿Regras de negócio
+O que são ?
+É o como funcionar do negócio, são definições de ordens de organização a serem seguidas pelo negócio ou empresa para eficiência e eficácia do sucesso do mesmo a longo prazo.
+Por que é importante ?
+Porque sem essas ordens o negócio ou empresa fica sem rumo à deriva, como um barco sem piloto, ou um piloto em um barco no meio do oceano. Nesse sentido, o barco é a empresa sem o diretor de operações ou o diretor de operações sem conhecimento pessoal e técnico próprio, de outras pessoas da sua equipe e de outras empresas. No caso de um negócio, um negócio sem um dono ou um dono sem conhecimento pessoal técnico próprio, de sua equipe, dos outros negócios ou até empresas. Dessa maneira a empresa ou negócio não sabe o que seguir para alcançar seu efetivo sucesso, fica realmente perdida, acreditando está seguindo o que é melhor para si, para seus stakeholders, mas não na verdade, se não não tiver regras de negócio bem estabelecidas.
+Fonte: Google.com
+regras de negócio
+https://share.google/aimode/2iQnHTb9nhqwwzq6c
+Requisitos
+Requisitos são as condições, regras ou exigências necessárias para fazer, conseguir ou criar algo. Eles definem o que é preciso ter ou cumprir para atingir um objetivo, seja em um processo seletivo, em um sistema de computador ou em uma regra legal.
+Tipos comuns
+* Exigências e regras: O que é obrigatório para uma vaga de emprego, inscrição ou curso.
+Observação: Como não é o foco do trabalho não dedicarei tempo a explicação. 
+Fonte: Google.com 
+Requisitos
+https://share.google/aimode/4rZAoeuB6t14Yvoa5
+ Requisitos de software / Funcionalidades do sistema
+O que são ?
+São a definição dos porquês sistemas fazem determinadas coisas, sabendo-se do porque ele existe e para que serve, agora pensando o que ele fará, porque e como, com seu porquê também.
+Porque são importantes ?
+Porque um sistema precisa de definições quanto a suas funcionalidades, o que deve fazer, porque, como fazer, porque, com objetivo final de atender seu cliente ou consumidor de forma satisfatória e duradoura. Sem a definição do que o sistema deve fazer é como ter uma boa ideia voltada para de um desenvolvimento de um software em que sabe-se porque ela existe e para que vai servir, esquecendo-se do porquê esse software deve funcionar, ou seja, do porquê ou o servir de sua criação porque são coisas que estão juntas e não separadas. Ou mesmo sem a definição de  como esse software deve funcionar, e do que fazer para esse software realmente funcionar. Um exemplo prático: Um software de um estacionamento, por que existe ? Porque sem um sistema desses, funcionários de um estacionamento teriam que anotar toda chegada, parada e saída de carros do local manualmente. Para que serve ? Para os funcionários do estacionamento terem uma maneira de controlar a chegada, parada e saída de carros do estacionamento de forma mais eficaz, economizando tempo e esforço em atividades mais corriqueiras com foco maior em atividades de gestão e controle de funcionários e de tráfego. Mas dentro desse contexto, para os funcionários aprenderem a usar o software terão de ter alguém que saiba usar e explicar para eles como funciona, e como teria alguém para tal competência ? Apenas alguém que saiba o que o software faz e como faz, tendo que ser capaz de explicar para os funcionários que fariam a gestão e controle do estacionamento, e que depois passariam esse conhecimento para os outros  funcionários, com objetivo, que dessa forma o estacionamento opere de forma eficiente e eficaz visando maior lucro futuro.
+Fonte: Google.com 
+Funcionalidades:
+https://share.google/aimode/2iQnHTb9nhqwwzq6c
+
+
+O que faz um requisito ser bem escrito?
+
+
+Características de um requisito ou regra de negócio válido
+
+
+1
+Único
+Trata de uma única ideia por 
+vez.
+2
+Consistente
+Não contradiz outros 
+requisitos.
+3
+Completo
+Contém todas as informações 
+necessárias.
+4
+Não ambíguo
+Permite apenas uma 
+interpretação.
+5
+Verificável
+É possível testar se foi 
+atendido.
+6
+Rastreável
+Sabe-se de onde veio e o que 
+impacta.
+7
+Exemplificável
+Pode ser ilustrado com um caso prático.
+
+
+Como documentar um requisito
+
+
+Uma ficha simples para registrar cada requisito — exemplo preenchido
+Campo Exemplo preenchido
+Identificador RF-01
+Nome Consultar estoque do produto
+Módulo Vendas
+Data de criação / Autor 10/03/2026 — João Souza
+Data de alteração / Autor —
+Versão / Dependências 1.0 — Cadastro de produto (RF-00)
+Descrição Permite consultar a quantidade disponível de um produto antes de finalizar a venda.
+
+
+Requisitos não funcionais do sistema
+O que são ?
+São as definições de como as funcionalidades do sistema são baseadas.
+Porque são importantes ?
+Porque em um software que não tem definições de como ele funciona não tem da mesma forma o planejamento e execução pensados com foco no usuário que o utilizará. Para um software gerar a necessidade de uso no cliente ou consumidor é preciso que ele seja pensado, planejado, criado e os requisitos não funcionais trabalham nessa parte, garantindo e mantendo que os usuários continuem o utilizando através de funcionalidades específicas e detalhadas. quando isso não ocorre, a geração de engajamento necessário para que esse software se mantenha por sua utilização e divulgação, por um longo período, é baixa, de forma que em pouco tempo tenha um pequeno número de usuários ativos e consequentemente o parem de usar.
+
+
+Requisitos funcionais do sistema
+O que são ? 
+Definições das funcionalidades do sistema, o que o sistema faz.
+Porque são importantes ?
+Porque para o processo de prototipação e criação de um sistema são necessárias definições quanto às suas funcionalidades e quão o impacto no usuário que o utilizará. 
+
+
+Caixa de supermercado padrão 
+
+
+Requisitos não funcionais
+Front-end:
+* Interface objetiva, clara, prática e organizada
+* Interface do usuário
+* Interface adm
+Back-end:
+Banco de dados:
+* Conexão com banco de dados
+Frios: Laticínios, carnes, sem glúten, zero lactose, vegetais, doces.
+Quentes: sem glúten, zero lactose, vegetais, doces.
+Produtos: Mostrar todos os produtos referentes a determinada categoria
+Quantidade: Mostrar a quantidade de cada produto
+Preço: Mostrar o preço de cada produto
+Estoque: Em caso de nível crítico da quantidade de produtos, encaminhar aviso ao fornecedor e ao gerente automaticamente.
+Painel de produtos: Para visualização de informações do produto
+Painel de vendas: Para visualização de informações de vendas
+Painel de estoque: Para visualização de informações do estoque
+Formas de pagamento: Permitir crédito, débito, pix ou dinheiro.
+
+
+Requisitos funcionais
+Front end:
+* Acesso ao perfil de administrador: login, senha, digital.
+* Acesso ao perfil de funcionários: email e senha
+* Dashboard produtos: Categoria, produto, quantidade e preço.
+* Dashboard vendas: Produtos mais vendidos na semana, mês, três meses, semestre.
+* Dashboard estoque: Produtos em estado crítico e médio
+
+
+Back end:
+* Crud
+* Dados do cliente: Solicitação de nome, contato e cpf do usuário.
+* Nota fiscal: Mostrar produto, quantidade, valor individual e valor final.
+Banco de dados:
+* Acesso ao histórico: Produtos mais e menos vendidos, semana mês e ano 
+
+
+Fonte:
+Google.com
+https://share.google/aimode/Qnuuzk9FDxFztYKzX
+https://share.google/aimode/ewErHPnYRdG9Sfnw3
+https://share.google/aimode/yRh6rgGXTKoBMcNIn
+https://share.google/aimode/iQRyrYgrDvHZjhbKo
+
+
+Slides da aula professor Vinicius Mattos 
+Aula 02 - Requisitos de Software e Git-GitHub.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Documentação de requisitos 
+
+
+Caixa de supermercado padrão 
+
+
+Requisitos não funcionais
+
+
+Front-end
+
+
+Campo / Exemplo preenchido
+Identificador / RNF-01
+Nome / Interface do sistema 
+Módulo / Vendas
+Data de criação / Autor 25/08/2026 — Felipe de Lima
+Data de alteração / Autor / — 
+Versão / Dependências 1.0 — Cadastro de produto (RF-00)
+Descrição / Interface objetiva, clara, prática e organizada.
+
+
+Campo / Exemplo preenchido
+Identificador / RNF-02
+Nome / 
+Módulo / 
+Data de criação / Autor 25/08/2026 — 
+Data de alteração / Autor  / — 
+Versão / Dependências 1.0 — 
+Descrição /
+
+
+
+
+Campo / Exemplo preenchido
+Identificador / RNF-02
+Nome / 
+Módulo / 
+Data de criação / Autor 25/08/2026 — 
+Data de alteração / Autor  / — 
+Versão / Dependências 1.0 — 
+Descrição /
+
+
+
+
+Campo / Exemplo preenchido
+Identificador / RNF-02
+Nome / 
+Módulo / 
+Data de criação / Autor 25/08/2026 — 
+Data de alteração / Autor  / — 
+Versão / Dependências 1.0 — 
+Descrição /
+
+
+
+
+Campo / Exemplo preenchido
+Identificador / RNF-02
+Nome / 
+Módulo / 
+Data de criação / Autor 25/08/2026 — 
+Data de alteração / Autor  / — 
+Versão / Dependências 1.0 — 
+Descrição /
+
+
+
+
+
+
+
+
+Back-end:
+Banco de dados:
+* Conexão com banco de dados
+Frios: Laticínios, carnes, sem glúten, zero lactose, vegetais, doces.
+Quentes: sem glúten, zero lactose, vegetais, doces.
+Produtos: Mostrar todos os produtos referentes a determinada categoria
+Quantidade: Mostrar a quantidade de cada produto
+Preço: Mostrar o preço de cada produto
+Estoque: Em caso de nível crítico da quantidade de produtos, encaminhar aviso ao fornecedor e ao gerente automaticamente.
+Painel de produtos: Para visualização de informações do produto
+Painel de vendas: Para visualização de informações de vendas
+Painel de estoque: Para visualização de informações do estoque
+Formas de pagamento: Permitir crédito, débito, pix ou dinheiro.
+
+
+Requisitos funcionais
+Front end:
+* Acesso ao perfil de administrador: login, senha, digital.
+* Acesso ao perfil de funcionários: email e senha
+* Dashboard produtos: Categoria, produto, quantidade e preço.
+* Dashboard vendas: Produtos mais vendidos na semana, mês, três meses, semestre.
+* Dashboard estoque: Produtos em estado crítico e médio
+
+
+Back end:
+* Crud
+* Dados do cliente: Solicitação de nome, contato e cpf do usuário.
+* Nota fiscal: Mostrar produto, quantidade, valor individual e valor final.
+Banco de dados:
+* Acesso ao histórico: Produtos mais e menos vendidos, semana mês e ano
