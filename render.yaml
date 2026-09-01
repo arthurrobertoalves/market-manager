@@ -17,3 +17,16 @@ services:
         sync: false
       - key: NODE_VERSION
         value: 22.22.3
+
+  - type: web
+    name: market-manager-web
+    runtime: node
+    plan: free
+    rootDir: web
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+      - key: NODE_VERSION
+        value: 22.22.3
